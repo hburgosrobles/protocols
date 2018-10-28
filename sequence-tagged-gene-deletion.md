@@ -22,8 +22,8 @@ I use Benchling to design my oligos, so the following instructions are assuming 
 Otherwise, you can adapt the oligo design to whatever approach you use.
 
 1. Generate a sequence file containing the gene of interest and 2 Kb of flanking sequence.
-2. Substitute the coding sequence of the gene of interest with the barcoded Erm<sup>R</sup>-Marker within the start codon and the last 7 aa plus stop codon of the gene of interest. [Example: Δ*cueR*::erm-bar.](https://benchling.com/s/seq-b4AyxNqFLv25wjchrTqZ)
-3. Using the distances shown in the image above as a guide, design oligos with a Tm = 60 ± 3°C (verify Tm with the "Analyze" function of [IDT's OligoAnalyzer 3.1 tool](https://www.idtdna.com/calc/analyzer)). \*Make sure oligo R1 starts with the start codon of the gene of interest, while F2 should include the last 7 codons.
+2. Substitute the coding sequence of the target gene with the barcoded Erm<sup>R</sup>-Marker within the start codon and the last 7 codons (6 aa plus stop codon) of the gene of interest. [Example: Δ*cueR*::erm-bar.](https://benchling.com/s/seq-b4AyxNqFLv25wjchrTqZ)
+3. Using the distances shown in the image above as a guide, design oligos with a Tm = 60 ± 3°C (verify Tm with the "Analyze" function of [IDT's OligoAnalyzer 3.1 tool](https://www.idtdna.com/calc/analyzer)). \*Make sure oligo R1 starts with the start codon of the target gene, while F2 should include the last 7 codons (6 aa plus stop codon).
 4. Attach the reverse complement of LUH to the 5'-end of R1 and RUH to 5'-end of F2 to form the R1-LUH and F2-RUH oligos (LUH Reverse complement = CTGGCGAAGCATATATAAGAAGCTCGTCTCGT; RUH = GACTTGACCTGGATGTCTCTACCCACAAGATCG).
 5. Calculate the predicted secondary structures for the oligos using the "Hairpin" function of [IDT's OligoAnalyzer 3.1 tool](https://www.idtdna.com/calc/analyzer) and reject oligos with predicted structures with a Tm ≥ ~45°C.
 
@@ -47,6 +47,49 @@ If oligos are larger than the allowed size (usually R1-LUH and F2-RUH), delete b
 6. Once oligos arrive, record order as received, add TE to 100 µM, then prepare 10 µM working dilutions of the oligos (when using plates, prepare the 10 µM working dilutions in 0.2 mL striptubes; this allows the use of a multichannel pipette and ensures appropriate storage of the oligos).
 
 ## Amplification of Upstream (US) and Downstream (DS) Homology Arms
+In this section you will use PCR to generate DNA containing the upstream and downstream homology regions of your target gene.
+You will use oligos F1 and R1-LUH to amplify the upstream region, and oligos F2-RUH and R2 to amplify the downstream region.
+
+\* I use Phusion High-fidelity DNAP (NEB Cat. # M0530) for this step, but other high-fidelity enzymes such as Q5 DNAP should work as well.
+
+1. Set up a PCR master mix for the total number of reactions needed (n) plus 10% the total number of reactions (n + n*0.1) as detailed below:
+
+| PCR MM (25 µl) | 1 rx.   | X rx.   |
+|:---------------|--------:|--------:|
+| H<sub>2</sub>O | 7.5 µl  | 7.5 µl * X |
+| 2X Phusion MM  | 12.5 µl | 12.5 µl * X |
+| 5 ng/µl ES114 gDNA | 1 µl| 1 µl * X |
+| Total =        | 21 µl   | 21 µl * X |
+
+2. Aliquot 21 µl of PCR MM to striptubes.
+3. Add 2 µl of 2.5 µM forward oligo to samples.
+4. Add 2 µl 10 µM reverse oligo to samples.
+
+\* I set up reactions using a multichannel pipette, so using 2.5 µM oligo dilutions allows me to pipette 2 µl comfortably (smaller volumes are difficult to pipette accurately with multichannel pipettes); however, a dilution of oligos at a different concentration may be used as long as you adjust the volume of oligo added and compensate with the amount of H<sub>2</sub>O in the reaction.
+
+5. Mix and spin down samples.
+6. Run reactions in thermocycler with Phusion protocol as detailed below:
+
+| Step                 | Temperature       | Time     |
+|:---------------------|------------------:|---------:|
+| Initial denaturation | 98°C              | 30 sec   |
+| 30 cycles:           |                   |          |
+| Denaturing           | 98°C              | 5 sec    |
+| Annealing            | 60°C              | 20 sec   |
+| Extension            | 72°C              | 20 sec   |
+| ^ back to denaturing step 29 times |     |          |
+| Final extension      | 72°C              | 5 min    |
+| Hold                 | 12°C              | For ever |
+
+7. Visualize 2.5 µl of samples in a 1% Agarose gel: mix 2.5 µl reaction + 2.5 µl [6X Purple loading dye](https://www.neb.com/products/b7025-gel-loading-dye-purple-6x-no-sds#Product%20Information) (NEB) + 10 µl H<sub>2</sub>O. Load 10 µl on gel.
+
+Example of successful reactions (ladder is [1 Kb DNA ladder](https://www.neb.com/products/n3232-1-kb-dna-ladder#Product%20Information) from NEB):
+
+<IMG SRC="/images/sequence-tagged-gene-deletion/2018-04-02_eHB29_Homology-Arms-PCR_Example.png" WIDTH=300>
+
+8. Purify the DNA from the successful reaction with the QIAquick PCR Purification Kit (QIAgen, Cat. No. 28106) and elute in 30 µl EB buffer.
+9. Determine DNA concentration.
+10. Store DNA @ -20°C.
 
 ## Amplification of Barcoded Erm<sup>R</sup> Marker
 
