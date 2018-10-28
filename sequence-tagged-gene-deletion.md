@@ -62,8 +62,8 @@ You will use oligos F1 and R1-LUH to amplify the upstream region, and oligos F2-
 | Total =        | 21 µl   | 21 µl * X |
 
 2. Aliquot 21 µl of PCR MM to striptubes.
-3. Add 2 µl of 2.5 µM forward oligo to samples.
-4. Add 2 µl 10 µM reverse oligo to samples.
+3. Add 2 µl of 2.5 µM forward oligo to samples; F1 or F2-RUH.
+4. Add 2 µl of 2.5 µM reverse oligo to samples; R1-LUH or R2.
 
 \* I set up reactions using a multichannel pipette, so using 2.5 µM oligo dilutions allows me to pipette 2 µl comfortably (smaller volumes are difficult to pipette accurately with multichannel pipettes); however, a dilution of oligos at a different concentration may be used as long as you adjust the volume of oligo added and compensate with the amount of H<sub>2</sub>O in the reaction.
 
@@ -92,6 +92,8 @@ Example of successful reactions (ladder is [1 Kb DNA ladder](https://www.neb.com
 10. Store DNA @ -20°C.
 
 ## Amplification of Barcoded Erm<sup>R</sup> Marker
+In this section you will generate a DNA fragment containing an antibiotic resistance marker (in this case Erm<sup>R</sup>) flanked by FRT sites, a spacer, a barcode region, and the LUH and RUH sequences arranged as follows: LUH-US homology-FRT-Erm<sup>R</sup>-FRT-spacer-barcode-DS homology-RUH.
+The template is 
 
 ## SOE-PCR and Generation of Mutagenic DNA
 
