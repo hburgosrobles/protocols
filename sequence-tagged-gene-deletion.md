@@ -10,7 +10,7 @@ The overall approach is summarized below:
 
 <IMG SRC="/images/sequence-tagged-gene-deletion/sequence-tagged-gene-deletion-approach.png" WIDTH=425>
 
-## Oligo Design
+## I - Oligo Design
 
 <IMG SRC="/images/sequence-tagged-gene-deletion/Oligos-Gene-Deletion.png" WIDTH=900>
 <br><br>
@@ -30,7 +30,7 @@ Otherwise, you can adapt the oligo design to whatever approach you use.
 \* If you are working with FLP sites, avoid generating oligos to FLP sites.
 Since it's a palindrome the oligo will likely form a hairpin and not work as intended in a PCR.
 
-## Ordering Oligos
+## II - Ordering Oligos
 1. Sign in to [Shop@UW](https://mds.bussvc.wisc.edu/order/shopper_lookup.asp) using the Mandel Lab login, select "Shop at External Suppliers & UW-Madison MDS Warehouse",
  and navigate to IDT's webpage.
 2. Under "Products & Services" tab, go to "Custom DNA oligos" and select "DNA oligos".
@@ -46,7 +46,7 @@ If oligos are larger than the allowed size (usually R1-LUH and F2-RUH), delete b
 5. Record order in Mandel Lab supplies log.
 6. Once oligos arrive, record order as received, add TE to 100 µM, then prepare 10 µM working dilutions of the oligos (when using plates, prepare the 10 µM working dilutions in 0.2 mL striptubes; this allows the use of a multichannel pipette and ensures appropriate storage of the oligos).
 
-## Amplification of Upstream (US) and Downstream (DS) Homology Arms
+## III - Amplification of Upstream (US) and Downstream (DS) Homology Arms
 In this section you will use PCR to generate DNA containing the upstream and downstream homology regions of your target gene.
 You will use oligos F1 and R1-LUH to amplify the upstream region, and oligos F2-RUH and R2 to amplify the downstream region.
 
@@ -91,21 +91,21 @@ Example of successful reactions (ladder is [1 Kb DNA ladder](https://www.neb.com
 9. Determine DNA concentration.
 10. Store DNA @ -20°C.
 
-## Amplification of Barcoded Erm<sup>R</sup> Marker
+## IV - Amplification of Barcoded Erm<sup>R</sup> Marker
 In this section you will generate a DNA fragment containing an antibiotic resistance marker (in this case Erm<sup>R</sup>) flanked by FRT sites, a spacer, a barcode region, and the LUH and RUH sequences arranged as follows: LUH-US homology-FRT-Erm<sup>R</sup>-FRT-spacer-barcode-DS homology-RUH.
-The template is 
+The template is pHB1
 
-## SOE-PCR and Generation of Mutagenic DNA
+## V - SOE-PCR and Generation of Mutagenic DNA
 
-## *tfoX* Transformation
+## VI - *tfoX* Transformation
 
-## Screening and Sequencing Δ*gene*::erm-bar Candidates
+## VII - Screening and Sequencing Δ*gene*::erm-bar Candidates
 
-## Removal of Erm<sup>R</sup> by FLP Recombinase
+## VIII - Removal of Erm<sup>R</sup> by FLP Recombinase
 
-## Screening and Sequencing Δ*gene*::bar Candidates
+## IX - Screening and Sequencing Δ*gene*::bar Candidates
 
-## Adding Deletion Strains to Database
+## X - Adding Deletion Strains to Database
 \* Barcode in notes?
 
-## Final Deletion Verification
+## XI - Final Deletion Verification
