@@ -51,7 +51,7 @@ If oligos are larger than the allowed size (usually R1-LUH and F2-RUH), delete b
 
 In this section you will use PCR to generate DNA containing the upstream and downstream homology regions of your target gene.
 You will use oligos F1 and R1-LUH to amplify the upstream region, and oligos F2-RUH and R2 to amplify the downstream region.
-Each DNA fragment will contain the linker sequences (LUH or RUH) needed to assemble the Mutagenic DNA fragment later in the protocol.
+Each DNA fragment will contain the linker sequences (LUH or RUH, at the 3'-end of the upstream fragment or the 5'-end of the downstream fragment, respectively) needed to assemble the Mutagenic DNA fragment later in the protocol.
 
 \* I use Phusion High-fidelity DNAP (NEB Cat. # M0530) for this step, but other high-fidelity enzymes such as Q5 DNAP should work as well.
 
@@ -96,9 +96,10 @@ Example of successful reactions (ladder is [1 Kb DNA ladder](https://www.neb.com
 
 ## IV - Amplification of Barcoded Erm<sup>R</sup> Marker
 In this section you will generate a DNA fragment containing an antibiotic resistance marker (in this case Erm<sup>R</sup>) flanked by FRT sites, a spacer, a barcode region, and the LUH and RUH sequences arranged as follows: LUH-FRT-Erm<sup>R</sup>-FRT-spacer-barcode-RUH.
-The template used is pHB1, which carries LUH-FRT-Erm<sup>R</sup>-FRT-spacer, and the oligos used are LUH (HB42) and ErmR-RUH-BarRnd_v2 (HB154: CGATCTTGTGGGTAGAGACATCCAGGTCAAGTCNNBNNBNNBNNBNNBNNBGGAATCAAGTGCATGAGCGCTGAAG).
+The template used is pHB1, which carries LUH-FRT-Erm<sup>R</sup>-FRT-spacer, and the oligos used are LUH (HB42) and ErmR-RUH-BarRnd_v2 (HB154: CGATCTTGTGGGTAGAGACATCCAGGTCAAGTCnnbnnbnnbnnbnnbnnbGGAATCAAGTGCATGAGCGCTGAAG).
 Oligo HB154 contains 18 semi-random basepairs that result in LUH-FRT-Erm<sup>R</sup>-FRT-spacer-barcode-RUH DNA fragments with unique sequences within the barcode region while concurrently ensuring the absence of stop codons within this sequence.
 Since only one of these sequence-tagged DNA fragments will replace the target gene, this ensures that each gene deletion is tagged with a unique barcode sequence that is in-frame with the rest of the scar and lacks stop codons.
+An oligo with a specific barcode sequence can be substituted for HB154 to generate the same Erm<sup>R</sup>-carrying DNA fragment with a specific sequence instead of a random one; *e.g.*, HB41 (CGATCTTGTGGGTAGAGACATCCAGGTCAAGTCcagccccgctctagtttgGGAATCAAGTGCATGAGCGCTGAAG).
 
 1. Set up PCR as detailed below:
 
@@ -124,9 +125,12 @@ Since only one of these sequence-tagged DNA fragments will replace the target ge
 11. Store DNA @ -20°C.
 
 ## V - SOE-PCR and Generation of Mutagenic DNA
+In this section you will use Splicing by Overlap Extension PCR (SOE-PCR) to fuse the upstream, downstream, and Erm<sup>R</sup> Marker DNA fragments into one DNA molecule that I call Mutagenic DNA.
+When inserted into VF, this Mutagenic DNA will replace the targeted gene with LUH-FRT-Erm<sup>R</sup>-FRT-spacer-barcode-RUH, generating the desired deletion.
+The overall approach is to 
 
 ## VI - *tfoX* Transformation
-
+In this section you will insert the Mutagenic DNA into VF using natural transformation.
 ## VII - Screening and Sequencing Δ*gene*::erm-bar Candidates
 
 ## VIII - Removal of Erm<sup>R</sup> by FLP Recombinase
