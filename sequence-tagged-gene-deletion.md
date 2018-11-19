@@ -156,14 +156,34 @@ This protocol can be adapted to high-throughput deletion of genes by using 8- or
 Example of successful reactions:
 
 <IMG SRC="images/sequence-tagged-gene-deletion/2018-10-16_eHB54_SOE-PCR_Second-Batch_Mutagenic-DNA_Example.jpg" WIDTH=700>
-<br>
-8. Purify the DNA from the successful reaction with the QIAquick PCR Purification Kit (QIAgen, Cat. No. 28106) and elute in 30 µl EB buffer.
+
+In this experiment, all reactions generated the desired 3 Kb DNA fragment, which represents the Mutagenic DNA (US homology-LL-FRT-Erm<sup>R</sup>-FRT-barcode-RL-DS homology) targeting the specific genes.
+The reaction in lane 10 was not as efficient in generating the 3 Kb fragment as the other reactions and it contains an ~750 bp product.
+Nonetheless, tfoX transformation of this DNA into MJM1100 pLostfoX was succesful and resulted in Erm<sup>R</sup> colonies.
+Frequently, bands in addition to the desired 3 Kb product are observed after SOE-PCR, but in general they do not seem to interfere with the efficiency of obtaining Erm<sup>R</sup> colonies after tfoX transformation.
+
+8. Purify DNA from the successful reactions with the QIAquick PCR Purification Kit (QIAgen, Cat. No. 28106) and elute in 30 µl EB buffer.
 9. Determine DNA concentration.
 10. Store DNA @ -20°C.
 
-
 ## VI - *tfoX* Transformation
-In this section you will insert the Mutagenic DNA into VF using natural transformation.
+In this section you will insert the Mutagenic DNA fragments into VF using natural transformation.
+This section follows the [tfoX transformation protocol](https://github.com/mjmlab/protocols/blob/master/tfox-transformation.md) from the Mandel Lab with some modifications.
+
+Recipient strain: MJM1538 = MJM1100 pLostfoX
+
+Day 1
+- Inoculate 3 mL LBS-Cam<sup>2.5</sup> with MJM1538.
+- Grow overnight @ 25°C.
+
+Day 2
+- Subculture 30 µl of overnight culture into 3 mL [Tris Minimal Media](https://github.com/mjmlab/protocols/blob/master/media.md#tris-minimal-medium) and continue growing overnight @ 25°C.
+
+\* Set up culture in Tris Minimal Media late in the day (after 5 pm) so that the culture grows ≤ 15-16 hr, otherwise the subculture into Tris Minimal Media the following day will take too long to grow.
+
+Day 3
+- Subculture 150 µ
+
 ## VII - Screening and Sequencing Δ*gene*::erm-bar Candidates
 
 ## VIII - Removal of Erm<sup>R</sup> by FLP Recombinase
