@@ -95,6 +95,7 @@ Example of successful reactions (ladder is [1 Kb DNA ladder](https://www.neb.com
 10. Store DNA @ -20°C.
 
 ## IV - Amplification of Barcoded Erm<sup>R</sup> Marker
+
 In this section you will generate a DNA fragment containing an antibiotic resistance marker (in this case Erm<sup>R</sup>) flanked by FRT sites, a spacer, a barcode region, and the LL and RL sequences arranged as follows: LL-FRT-Erm<sup>R</sup>-FRT-spacer-barcode-RL.
 The template used is pHB1, which carries LL-FRT-Erm<sup>R</sup>-FRT-spacer, and the oligos used are LL (HB42) and ErmR-RL-BarRnd_v2 (HB154: CGATCTTGTGGGTAGAGACATCCAGGTCAAGTCnnbnnbnnbnnbnnbnnbGGAATCAAGTGCATGAGCGCTGAAG).
 Oligo HB154 contains 18 semi-random basepairs that result in LL-FRT-Erm<sup>R</sup>-FRT-spacer-barcode-RL DNA fragments with unique sequences within the barcode region while concurrently ensuring the absence of stop codons within this sequence.
@@ -125,6 +126,7 @@ An oligo with a specific barcode sequence can be substituted for HB154 to genera
 11. Store DNA @ -20°C.
 
 ## V - SOE-PCR and Generation of Mutagenic DNA
+
 In this section, you will use Splicing by Overlap Extension PCR (SOE-PCR) to fuse the upstream and downstream homology arms with the Erm<sup>R</sup> Marker DNA fragments into one DNA molecule that I call the Mutagenic DNA.
 When inserted into VF, this Mutagenic DNA will replace the targeted gene with LL-FRT-Erm<sup>R</sup>-FRT-spacer-barcode-RL, generating the desired deletion.
 This approach requires that the middle DNA be flanked by the Left and Right linker sequences (generation of the middle DNA fragment containing Erm<sup>R</sup> is described in section IV of this protocol; Erm<sup>R</sup>-bar DNA), and that the upstream and downstream homology arms contain the respective linkers so that they can anneal to the middle DNA by sequence homology.
@@ -156,7 +158,7 @@ This protocol can be adapted to high-throughput deletion of genes by using 8- or
 Example of successful reactions:
 
 <IMG SRC="images/sequence-tagged-gene-deletion/2018-10-16_eHB54_SOE-PCR_Second-Batch_Mutagenic-DNA_Example.jpg" WIDTH=700>
-
+<br>
 In this experiment, all reactions generated the desired 3 Kb DNA fragment, which represents the Mutagenic DNA (US homology-LL-FRT-Erm<sup>R</sup>-FRT-barcode-RL-DS homology) targeting the specific genes.
 The reaction in lane 10 was not as efficient in generating the 3 Kb fragment as the other reactions and it contains an ~750 bp product.
 Nonetheless, tfoX transformation of this DNA into MJM1100 pLostfoX was succesful and resulted in Erm<sup>R</sup> colonies.
@@ -167,6 +169,7 @@ Frequently, bands in addition to the desired 3 Kb product are observed after SOE
 10. Store DNA @ -20°C.
 
 ## VI - *tfoX* Transformation
+
 In this section you will insert the Mutagenic DNA fragments into VF using natural transformation.
 This section follows the [tfoX transformation protocol](https://github.com/mjmlab/protocols/blob/master/tfox-transformation.md) from the Mandel Lab with some modifications.
 
@@ -177,17 +180,108 @@ Day 1
 - Grow overnight @ 25°C.
 
 Day 2
-- Subculture 30 µl of overnight culture into 3 mL [Tris Minimal Media](https://github.com/mjmlab/protocols/blob/master/media.md#tris-minimal-medium) and continue growing overnight @ 25°C.
+- Subculture 30 µl of overnight culture into 3 mL [Tris Minimal Media](https://github.com/mjmlab/protocols/blob/master/media.md#tris-minimal-medium)-Cam<sup>2.5</sup> and continue growing overnight @ 25°C.
 
-\* Set up culture in Tris Minimal Media late in the day (after 5 pm) so that the culture grows ≤ 15-16 hr, otherwise the subculture into Tris Minimal Media the following day will take too long to grow.
+\* Set up culture in Tris Minimal Media-Cam<sup>2.5</sup> late in the day (after 5 pm) so that the culture grows ≤ 15-16 hr, otherwise the subculture the following day will take too long to grow.
 
 Day 3
-- Subculture 150 µ
+- Subculture 150 µl into 7 mL Tris Minimal Media-Cam<sup>2.5</sup> (protocol normally asks for 3 mL Tris culture, but I need to use a larger volume because each gene deletion requires 500 µl of culture and I'm deleting 12 genes at a time) and continue growing @ 25°C.
+- When culture is at OD<sub>600</sub> = 0.2, transfer 500 µl of culture into a 2 mL microtube.
+- Add 100 ng of Mutagenic DNA, vortex briefly, and incubate @ room temperature (~25°C) for 30 min.
+- Add 1 mL of LBS and transfer samples into a 16 mm diamater glass culture tube.
+- Incubate overnight @ 25°C for recovery.
+
+Day 4
+- Plate 50 µl of cultures onto LBS-Erm<sup>5</sup> plates and grow overnight @ 25°C.
+
+\* Only those strains that have substituted the gene targeted for deletion with the Erm<sup>R</sup>-cassette will grow.
+
+Day 5
+- Restreak 3 candidates per gene deletion target onto LBS-Erm<sup>5</sup> plates and grow overnight @ 25°C.
+
+Day 6
+- Using a single sterile stick, pick a single colony of each candidate and patch onto LBS-Erm<sup>5</sup>, LBS-Cam<sup>2.5</sup>, and LBS plates, and inoculate 3 mL of LBS-Erm<sup>5</sup>.
+- Grow overnight @ 25°C.
+
+\* Selection on Erm to confirm insertion of Erm<sup>R</sup>-cassette, on Cam<sup>2.5</sup> to test for absence of pLostfoX (candidate shouldn't grow), and LBS to confirm that lack of growth on Cam<sup>2.5</sup> is due to lack of Cam<sup>R</sup> and not to lack of bacteria on stick.
+
+Day 7
+- Freeze down temporary glycerol stocks of candidates with the desired phenotype (Erm<sup>R</sup> and Cam<sup>S</sup>):
+  - Transfer 1.2 mL of overnight culture into a strain vial with 600 µl 50% glycerol, vortex, and freeze @ -80°C.
+
+- Harvest 1:10 dilutions of overnight cultures (10 µl culture into 90 µl H<sub>2</sub>O), vortex, and freeze @ -20°C.
+This will serve as template for the Screen PCR in the following section.
 
 ## VII - Screening and Sequencing Δ*gene*::erm-bar Candidates
 
-## VIII - Removal of Erm<sup>R</sup> by FLP Recombinase
+### Screen PCR
 
+In this section, you will perform PCR using the 1:10 culture dilutions harvested in the previous step as template with several oligo pairs that amplify different regions of the gene deletion to screen for the presence of the Erm<sup>R</sup>-cassette within the region of interest and the absence of the WT gene.
+
+| Pair | Forward oligo | Reverse oligo |
+|-|-|-|
+| Flanking (F) | F1 | R2 |
+| Junction (J) | FO | Erm-left-out (HB8) |
+| Within (W) | FW | RW |
+
+\* HB8 = ACAAAATTTTAAGATACTGCACTATCAACACACTCTTAAG; anneals within the Erm<sup>R</sup>-cassette close to the 5'-end and amplifies in the upstream direction.
+
+Expected results depending on template DNA used:
+
+| Oligos | ∆*gene::erm-bar* | WT |
+|-|-|-|
+| F | Generates a product of ~3 Kb | Generates a product whose size is ~2 Kb + target-gene-size (bp) |
+| J | Generates an ~1.5 Kb product | Does not amplify a product because oligo HB8 cannot anneal if the Erm<sup>R</sup>-cassette is absent |
+| W | No product if gene deletion was successful | Amplifies an ~500 bp product (this size can vary as long as oligos are designed to anneal within the WT ORF)|
+
+1. Set up Screen PCR in 0.2 mL tubes on ice as follows:
+  - Aliquot 5 µl of 2X OneTaq MM ([NEB #M0482L](https://www.neb.com/products/m0482-onetaq-2x-master-mix-with-standard-buffer#Product%20Information)) into 0.2 mL tubes (either individual or striptubes may be used)
+  - Add 1 µl of 1:10 culture dilutions or 1 µl 10 ng/µl gDNA as template.
+  - Add 2 µl of 2.5 µM forward oligo to reactions.
+  - Add 2 µl of 2.5 µM reverse oligo to reactions.
+
+2. Close tubes (seal if using plates), mix, and spin down.
+3. Run reactions in thermocycler with Screen PCR protocol as detailed below:
+
+| Step                 | Temperature       | Time     |
+|:---------------------|------------------:|---------:|
+| Initial denaturation | 94°C              | 2 min    |
+| 30 cycles:           |                   |          |
+| Denaturing           | 94°C              | 15 sec   |
+| Annealing            | 58°C              | 20 sec   |
+| Extension            | 68°C              | 1 min/Kb |
+| ^ back to denaturing step 29 times |     |          |
+| Final extension      | 68°C              | 5 min    |
+| Hold                 | 12°C              | For ever |
+
+4. Visualize 2.5 µl of samples in a 1% Agarose gel: mix 2.5 µl reaction + 2.5 µl 6X Purple loading dye + 10 µl H<sub>2</sub>O. Load 10 µl on gel. If using Thermo Scientific Owl D3-14 Wide Gel Electrophoresis System (Cat. No. 09-528-128), then run gel @ 140 V for 40 min.
+
+Example of successful reactions:
+
+<IMG SRC="images/sequence-tagged-gene-deletion/Screen-PCR_gene-erm-bar_example.png" WIDTH=800>
+<br>
+In the gel above the three candidates are run next to reactions performed with WT gDNA for each oligo pair and gene target.
+All candidates for both targets have the desired genotype:
+  - The Flanking oligos amplify products of different sizes when using template from the gene deletions vs WT.
+  - The Junction oligos produce a product with the gene deletions but not from WT.
+  - The Within oligos do not generate a product from the gene deletions but do from WT.
+
+Below is an example of a Screen PCRs where one candidate was incorrect (Δ*ahpC*, candidate 2):
+
+<IMG SRC="images/sequence-tagged-gene-deletion/Screen-PCR_gene-erm-bar_bad-candidate-example.png" WIDTH=800>
+<br>
+\* This gel exemplifies why all three oligo pairs are needed to screen for the correct gene deletion genotype. If you skip even one oligo pair, the other two might give the "correct result" even though the strain is not correct.
+
+5. Purify DNA from the successful reactions with the QIAquick PCR Purification Kit (QIAgen, Cat. No. 28106) and elute in 30 µl EB buffer.
+6. Determine DNA concentration.
+7. Store DNA @ -20°C.
+
+### Sequencing
+
+These instructions are for submitting the sequencing reactions to the University of Wisconsin-Madison Biotechnology Center.
+
+## VIII - Removal of Erm<sup>R</sup> by FLP Recombinase
+ you will use conjugation to insert pKV496, which codes for the FLP recombinase, into the cell so that FLP can remove the Erm<sup>R</sup>-cassette, leaving behind a
 ## IX - Screening and Sequencing Δ*gene*::bar Candidates
 
 ## X - Adding Deletion Strains to Database
