@@ -3,8 +3,10 @@ by Hector Burgos
 
 This protocol details how to generate a clean deletion of target genes in *Vibrio fischeri* where each deletion strain is tagged with a unique sequence or "barcode".
 SOE-PCR is used to generate the Mutagenic DNA (linear dsDNA carrying Erm<sup>R</sup> and the barcode, flanked by FRT sites and upstream and downstream homology to target gene; arranged as follows: US homology-FRT-Erm<sup>R</sup>-FRT-barcode-DS homology) and *tfoX* transformation is used to insert it into *V. fischeri* where it recombines into the chromosome based on sequence homology.
+The deletion at this stage is named *gene::erm-bar* (bar = barcode).
 This technique then allows for the excision of the Erm<sup>R</sup> cassette by inserting a plasmid that expresses FLP recombinase, which uses the FRT sites to remove the antibiotic cassette.
 The resulting scar is in-frame (reduces likelihood of polar effects on gene expression) and carries a barcode that allows identification of the specific deletion strain through sequencing.
+The gene deletion after removal of the Erm<sup>R</sup>-cassette is called *gene::bar*.
 One important detail is that the start codon and the last 7 codons (6 aa plus stop codon) of the targeted gene are preserved and form part of the deletion scar.
 The overall approach is summarized below:
 
@@ -18,22 +20,26 @@ Oligos F1 and R1-LL amplify 1Kb upstream of target gene including the start codo
 Oligo FO anneals 1.5 Kb upstream of target gene and is used to amplify from outside the junction of the mutation to verify insertion of cassette in correct genomic location.
 Oligos FW and RW anneal within target gene and should produce no product from a successful gene deletion strain.
 
-I use Benchling to design my oligos, so the following instructions are assuming you are also using Benchling.
-Otherwise, you can adapt the oligo design to whatever approach you use.
+I use [Benchling](https://benchling.com) (Biology Software) to design my oligos, so the following instructions are assuming you are also using Benchling.
+Otherwise, you can adapt the oligo design to whatever software/approach you use.
 
 1. Generate a sequence file containing the gene of interest and 2 Kb of flanking sequence.
-2. Substitute the coding sequence of the target gene with the barcoded Erm<sup>R</sup>-Marker within the start codon and the last 7 codons (6 aa plus stop codon) of the gene of interest. [Example: Δ*cueR*::erm-bar.](https://benchling.com/s/seq-b4AyxNqFLv25wjchrTqZ)
+2. Substitute the coding sequence of the target gene with the barcoded Erm<sup>R</sup>-Marker within the start codon and the last 7 codons (6 aa plus stop codon) of the gene of interest to generate the *gene::erm-bar* sequence file. [Example: Δ*cueR*::erm-bar.](https://benchling.com/s/seq-b4AyxNqFLv25wjchrTqZ)
 3. Using the distances shown in the image above as a guide, design oligos with a Tm = 60 ± 3°C (verify Tm with the "Analyze" function of [IDT's OligoAnalyzer 3.1 tool](https://www.idtdna.com/calc/analyzer)). \*Make sure oligo R1 starts with the start codon of the target gene, while F2 should include the last 7 codons (6 aa plus stop codon).
 4. Attach the reverse complement of LL to the 5'-end of R1 and RL to 5'-end of F2 to form the R1-LL and F2-RL oligos (LL Reverse complement = CTGGCGAAGCATATATAAGAAGCTCGTCTCGT; RL = GACTTGACCTGGATGTCTCTACCCACAAGATCG).
 5. Calculate the predicted secondary structures for the oligos using the "Hairpin" function of [IDT's OligoAnalyzer 3.1 tool](https://www.idtdna.com/calc/analyzer) and reject oligos with predicted structures with a Tm ≥ ~45°C.
+6. Generate the *gene:bar* sequence file by deleting the Erm<sup>R</sup> coding sequence and one of the FRT sites. [Example: Δ*cueR*::bar.](https://benchling.com/s/seq-tAy8XwWMMXY9lVcVhqH8)
+This sequence represents the final deletion construct that will be made. Both the *gene::erm-bar* and *gene::bar* files will be used later for analyzing sequencing data.
 
 \* If you are working with FLP sites, avoid generating oligos to FLP sites.
 Since it's a palindrome the oligo will likely form a hairpin and not work as intended in a PCR.
 
 ## II - Ordering Oligos
 
+Several steps in this section apply only to Mandel Lab members, though other labs can follow the general protocol for ordering oligos from [IDT](https://www.idtdna.com/pages/home).
+
 1. Sign in to [Shop@UW](https://mds.bussvc.wisc.edu/order/shopper_lookup.asp) using the Mandel Lab login, select "Shop at External Suppliers & UW-Madison MDS Warehouse",
- and navigate to IDT's webpage.
+ and navigate to Integrated DNA Technologies, Inc.'s webpage.
 2. Under "Products & Services" tab, go to "Custom DNA oligos" and select "DNA oligos".
 Oligos can be ordered in tubes or in 96-well plates (24 oligos minimum; select "all ordering options" when navigating to "DNA oligos").
 3. For ordering multiple oligos:
@@ -41,7 +47,7 @@ Oligos can be ordered in tubes or in 96-well plates (24 oligos minimum; select "
   - 96-well plate: select "upload plate", download the "Excel plate ordering template", fill in your oligos, and upload. Name your plate with a unique but simple name, as oligo location is entered into Mandel Lab database in the "Plate, well" format. Under "plate specifications", select "normalized yield" for "normalization type", and "calculate" the "quantity (nmol)" and input the max option (e.g., 4-5 nmol).
 
 \* Oligos are generally ordered at the 25 nmole scale, where oligo size is limited to 60 bp for tubes and 80 bp for 96-well plate.
-If oligos are larger than the allowed size (usually R1-LL and F2-RL), delete bases from the 5'-end of the oligo until size is reduced to the allowed size (up to 5 bp can be deleted without causing issues downstream; I haven't tested longer deletions); otherwise you can order in 100 nmole scale, though this is not recommended for plates as you will have to order a separate plate for each synthesis scale.
+If oligos are larger than the allowed size (usually R1-LL and F2-RL), delete bases from the 5'-end of the oligo until size is reduced to the allowed size (up to 5 bp can be deleted from LL and RL without causing issues downstream; I haven't tested longer deletions); otherwise you can order in 100 nmole scale, though this is not recommended for plates as you will have to order a separate plate for each synthesis scale.
 
 4. Once you are sure that your order is set up correctly, place order in IDT, which will take you back to Shop@UW, then follow the prompts to finish the order.
 5. Record order in Mandel Lab supplies log.
@@ -217,6 +223,7 @@ This will serve as template for the Screen PCR in the following section.
 ### Screen PCR
 
 In this section, you will perform PCR using the 1:10 culture dilutions harvested in the previous step as template with several oligo pairs that amplify different regions of the gene deletion to screen for the presence of the Erm<sup>R</sup>-cassette within the region of interest and the absence of the WT gene.
+I usually screen the three candidates obtained in the previous step.
 
 | Pair | Forward oligo | Reverse oligo |
 |-|-|-|
@@ -278,7 +285,77 @@ Below is an example of a Screen PCRs where one candidate was incorrect (Δ*ahpC*
 
 ### Sequencing
 
-These instructions are for submitting the sequencing reactions to the University of Wisconsin-Madison Biotechnology Center.
+These instructions are for submitting the sequencing reactions to the University of Wisconsin-Madison Biotechnology Center for Sanger Sequencing of a 96-well plate.
+Otherwise the reactions can be performed at a smaller scale and through a different method/institution.
+In order to reduce the scale, I sequence the two best candidates per target identified in the screen PCR in the previous section.
+The sequencing for the Δ*gene*:erm-bar candidates utilizes oligos that anneal within the left and right linker sequences, and oligos that anneal within the Erm<sup>R</sup>-cassette.
+
+| Oligos | HB# |
+|-|-|
+| LL | HB42 |
+| RL | HB146 |
+| Erm-left-out | HB8 |
+| Erm-right-out | HB9 |
+
+Sanger sequencing reaction set up = 24 µl volume with 40-50 ng PCR-amplified DNA and 10-20 pmol oligo.
+
+1. For every oligo, set up one 12-striptube with 8 µl of 2.5 µM oligo per sample in each 0.2 mL tube (e.g., 3 samples + 1 extra = 32 µl 2.5 µM oligo per tube).
+
+Example of set up of 12-striptube for oligos:
+
+| 12-striptube for oligo LL | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|-|-|-|-|-|-|-|-|-|-|-|-|-|
+| Volume of 2.5 µM HB42: | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl |
+
+| 12-striptube for oligo RL | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|-|-|-|-|-|-|-|-|-|-|-|-|-|
+| Volume of 2.5 µM HB146: | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl | 32 µl |
+
+...plus two more for oligos HB8 and HB9.
+
+2. Aliquot the DNA from the deletion candidates into 12-striptubes making sure to add enough volume for the number of oligos used (e.g., with ~10 ng/µl DNA, use 4 µl per reaction: four oligos per candidate DNA sample + 1 extra = 5 reaction * 4 µl ~10 ng/µl DNA = 20 µl ~10 ng/µl DNA).
+Because one usually sequences multiple candidates per deletion target, arrange the candidates as follows to assist in setting up reactions in high-throughput:
+
+Candidate DNA 12-striptubes arrangement:
+
+| 12-striptube #1 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|-|-|-|-|-|-|-|-|-|-|-|-|-|
+| Candidate **#1** for targets: | *geneA* | *geneB* | *geneC* | *geneD* | *geneE* | *geneF* | *geneG* | *geneH* | *geneI* | *geneJ* | *geneK* | *geneL* |
+
+| 12-striptube #2 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|-|-|-|-|-|-|-|-|-|-|-|-|-|
+| Candidate **#2** for targets: | *geneA* | *geneB* | *geneC* | *geneD* | *geneE* | *geneF* | *geneG* | *geneH* | *geneI* | *geneJ* | *geneK* | *geneL* |
+
+3. Transfer 12 µl H<sub>2</sub>O into wells of a 96-well plate.
+4. Using a multichannel pipette, transfer 4 µl of candidate DNA into the corresponding wells of the plate.
+Arrange the DNA from the first set of candidates in rows A-D, and candidate #2 DNA in rows E-H.
+5. Add 8 µl of 2.5 µM oligos so that each candidate DNA is mixed with each oligo; transfer oligo LL (HB42) into rows A and E, oligo RL (HB146) into rows B and F, Erm-left-out (HB8) to rows C and G, and Erm-right-out (HB9) to rows D and H.
+6. Seal plate, mix, and spin down.
+7. Submit for full-plate sequencing.
+
+Representative plate layout (when sequencing at UW-Biotech each sequencing data file is labeled following the order of A1 = #1, B1 = #2, C1 = #3, etc; the arrangement shown here results in sequential numbering of the data files for each candidate sample, making subsequent data analysis a little bit easier; e.g., the sequence files for *geneA* candidate #1 will be numbered 1-4, representing the samples in wells A1, B1, C1, and D1):
+
+| | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|-|-|-|-|-|-|-|-|-|-|-|-|-|
+| A | *geneA* #1; HB42 | *geneB* #1; HB42 | *geneC* #1; HB42 | *geneD* #1; HB42 | *geneE* #1; HB42 | *geneF* #1; HB42 | *geneG* #1; HB42 | *geneH* #1; HB42 | *geneI* #1; HB42 | *geneJ* #1; HB42 | *geneK* #1; HB42 | *geneL* #1; HB42 |
+| B | *geneA* #1; HB146 | *geneB* #1; HB146 | *geneC* #1; HB146 | *geneD* #1; HB146 | *geneE* #1; HB146 | *geneF* #1; HB146 | *geneG* #1; HB146 | *geneH* #1; HB146 | *geneI* #1; HB146 | *geneJ* #1; HB146 | *geneK* #1; HB146 | *geneL* #1; HB146 |
+| C | *geneA* #1; HB8 | *geneB* #1; HB8 | *geneC* #1; HB8 | *geneD* #1; HB8 | *geneE* #1; HB8 | *geneF* #1; HB8 | *geneG* #1; HB8 | *geneH* #1; HB8 | *geneI* #1; HB8 | *geneJ* #1; HB8 | *geneK* #1; HB8 | *geneL* #1; HB8 |
+| D | *geneA* #1; HB9 | *geneB* #1; HB9 | *geneC* #1; HB9 | *geneD* #1; HB9 | *geneE* #1; HB9 | *geneF* #1; HB9 | *geneG* #1; HB9 | *geneH* #1; HB9 | *geneI* #1; HB9 | *geneJ* #1; HB9 | *geneK* #1; HB9 | *geneL* #1; HB9 |
+| E | *geneA* #2; HB42 | *geneB* #2; HB42 | *geneC* #2; HB42 | *geneD* #2; HB42 | *geneE* #2; HB42 | *geneF* #2; HB42 | *geneG* #2; HB42 | *geneH* #2; HB42| *geneI* #2; HB42 | *geneJ* #2; HB42 | *geneK* #2; HB42 | *geneL* #2; HB42 |
+| F | *geneA* #2; HB146 | *geneB* #2; HB146 | *geneC* #2; HB146 | *geneD* #2; HB146 | *geneE* #2; HB146 | *geneF* #2; HB146 | *geneG* #2; HB146| *geneH* #2; HB146 | *geneI* #2; HB146 | *geneJ* #2; HB146 | *geneK* #2; HB146 | *geneL* #2; HB146 |
+| G | *geneA* #2; HB8 | *geneB* #2; HB8 | *geneC* #2; HB8 | *geneD* #2; HB8 | *geneE* #2; HB8 | *geneF* #2; HB8 | *geneG* #2; HB8 | *geneH* #2; HB8 | *geneI* #2; HB8 | *geneJ* #2; HB8 | *geneK* #2; HB8 | *geneL* #2; HB8 |
+| H | *geneA* #2; HB9 | *geneB* #2; HB9 | *geneC* #2; HB9 | *geneD* #2; HB9 | *geneE* #2; HB9 | *geneF* #2; HB9 | *geneG* #2; HB9 | *geneH* #2; HB9 | *geneI* #2; HB9 | *geneJ* #2; HB9 | *geneK* #2; HB9 | *geneL* #2; HB9 |
+
+#### Sequencing Data Analysis
+I use [Benchling](https://benchling.com) (Biology Software) for analysis of the sequencing data.
+Each target is analyzed separately since the sequence data files need to be aligned to the sequence of interest for each target.
+
+1. Open a sequence file with the *gene::erm-bar* construct made in step I-2.
+2. Click on the "Alignments" button on the toolbar to the right, and select "Create New Alignment".
+3. Within the "Alignment" window that pops up, click on "Choose File(s)" and select the desired sequence data files to align to the current template.
+4. Click on "Create Alignment" and wait for the alignment to be generated (usually takes a few seconds)
+5.
+
 
 ## VIII - Removal of Erm<sup>R</sup> by FLP Recombinase
  you will use conjugation to insert pKV496, which codes for the FLP recombinase, into the cell so that FLP can remove the Erm<sup>R</sup>-cassette, leaving behind a
@@ -288,3 +365,10 @@ These instructions are for submitting the sequencing reactions to the University
 \* Barcode in notes?
 
 ## XI - Final Deletion Verification
+
+## APPENDIX
+
+### Oligos used throughout protocol
+
+| Oligo name | HB# | Sequence |
+|-|-|-|
