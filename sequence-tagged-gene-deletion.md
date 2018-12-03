@@ -348,12 +348,12 @@ Representative plate layout (when sequencing at UW-Biotech each sequencing data 
 
 #### Sequencing Data Analysis
 I use [Benchling](https://benchling.com) (Biology Software) for analysis of the sequencing data.
-Each target is analyzed separately since the sequence data files need to be aligned to the sequence of interest for each target.
+Each gene deletion target is analyzed separately since the sequence data files need to be aligned to the sequence of the desired deletion for each target.
 
 1. Open a sequence file with the *gene::erm-bar* construct made in step I-2.
 2. Click on the "Alignments" button on the toolbar to the right, and select "Create New Alignment".
 3. Within the "Alignment" window that pops up, click on "Choose File(s)" and select the desired sequence data files to align to the current template.
-4. Click on "Create Alignment" and wait for the alignment to be generated (usually takes a few seconds)
+4. Click on "Create Alignment" (usually takes a few seconds to generate the alignment).
 5.
 
 
