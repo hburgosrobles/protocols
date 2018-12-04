@@ -347,6 +347,7 @@ Representative plate layout (when sequencing at UW-Biotech each sequencing data 
 | H | *geneA* #2; HB9 | *geneB* #2; HB9 | *geneC* #2; HB9 | *geneD* #2; HB9 | *geneE* #2; HB9 | *geneF* #2; HB9 | *geneG* #2; HB9 | *geneH* #2; HB9 | *geneI* #2; HB9 | *geneJ* #2; HB9 | *geneK* #2; HB9 | *geneL* #2; HB9 |
 
 #### Sequencing Data Analysis
+
 I use [Benchling](https://benchling.com) (Biology Software) for analysis of the sequencing data.
 Each gene deletion target is analyzed separately since the sequence data files need to be aligned to the sequence of the desired deletion for each target.
 
@@ -354,15 +355,17 @@ Each gene deletion target is analyzed separately since the sequence data files n
 2. Click on the "Alignments" button on the toolbar to the right, and select "Create New Alignment".
 3. Within the "Alignment" window that pops up, click on "Choose File(s)" and select the desired sequence data files to align to the current template.
 4. Click on "Create Alignment" (usually takes a few seconds to generate the alignment).
-5.
-
+5. Verify the sequences for: 1) Lack of mutations within 1 Kb of US and DS sequence, relative to the target gene. 2) Lack of mutations within LL, FRT sites, RL, and spacer region (all these form the deletion scar after Erm<sup>R</sup>-cassette is removed, so they need to not have errors) 3) Lack of stop codons within barcode sequence (though using).
 
 ## VIII - Removal of Erm<sup>R</sup> by FLP Recombinase
- you will use conjugation to insert pKV496, which codes for the FLP recombinase, into the cell so that FLP can remove the Erm<sup>R</sup>-cassette, leaving behind a
-## IX - Screening and Sequencing Δ*gene*::bar Candidates
 
-## X - Adding Deletion Strains to Database
-\* Barcode in notes?
+In this section you will use conjugation to insert pKV496, which codes for the FLP recombinase, into the cell so that FLP can remove the Erm<sup>R</sup>-cassette, leaving behind an in-frame deletion scar with the unique barcode sequence.
+This section follows the [Conjugation protocol](https://github.com/mjmlab/protocols/blob/master/conjugation.md) from the Mandel lab with some modifications.
+
+Donor strain: MJM3478 = *E.coli* π3813 / pKV496
+Helper strain: MJM534 = *E.coli* CC118 λpir / pEVS104
+
+## IX - Screening and Sequencing Δ*gene*::bar Candidates
 
 ## XI - Final Deletion Verification
 
