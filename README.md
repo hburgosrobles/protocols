@@ -1,5 +1,7 @@
 # Mandel Lab Protocols
 
+[![DOI](https://zenodo.org/badge/53515435.svg)](https://zenodo.org/badge/latestdoi/53515435)
+
 ### Molecular Biology
 - [Gene Deletion in *V. fischeri*](gene-deletion.md)
 - [Gibson Assembly](gibson-assembly.md)
@@ -9,6 +11,8 @@
 ### Protein
 - [Trichloroacetic acid (TCA) precipitation](tca.precipitation.md)
 - [Bioinformatics Prediction Tools](protein-domain-prediction.md)
+- [SDS-Page](sds-page.md)
+- [Immunoblotting](immunoblotting.md)
 
 ### Microbiology
 - Media and Buffers Recipes
@@ -22,6 +26,7 @@
 - [Glycerol stocks](glycerol-stocks.md)
 - [Luminescence reading in a single tube luminometer](luminometer.md)
 - [Transformation using tfoX induction](tfox-transformation.md)
+- [Wrinkled Colony Assay](wrinkled-colony-assay.md)
 
 ### Lab Maintenance
 - [Preparing sterile supplies](preparing-sterile-lab-supplies.md)
