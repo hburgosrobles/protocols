@@ -19,3 +19,32 @@ This protocol describes how to perform Barcode Sequencing (BarSeq) experiments t
 ###### Continue protocol on same or next day (if continuing on the same day, allow mixed population to incubate @ -80°C for ≥ 30 min)
 
 ## II.A - Squid colonization
+
+Perform squid colonization following [Mandel lab protocol](squid-colonization.md)
+
+1. Thaw ≥ 30 µl of multiplexed population on ice - harvest bacterial glob using a sterile stick and transfer into a 1.7 mL microtube.
+2. Dilute 30 µl into 2.970 mL LBS (1:100 dilution).
+3. Incubate @ 25°C for 1-2 hr. Record growth time: Growth time = __________
+4. Set up FSIO and squid.
+5. Set up inoculum plates.
+6. Measure OD<sub>600</sub> of input library and calculate inoculum volume for a 3-5 x 10<sup>3</sup> CFU/mL target inoculum.
+
+	Input Library OD600 = __________            
+  Inoculum volume (1.25/OD) = __________
+
+7. Inoculate squid with the appropriate volume of input library depending on the desired inoculum volume as described in table. For 0.1 X inoculum, dilute input library 1:10 in FSIO, then use the calculated inoculum volume to inoculate. For 10 X and 100 X simply use the appropriate volume.
+8. Plate 50 µl of water from squid-treatment bowls in duplicate for inoculum counts. For treatment groups with 10 X and 100 X inoculum, dilute sample 1:10 twice in 450 µl FSIO and plate dilutions as usual.
+Harvest sample from Input Library (1 mL of Input library into a 1.7 mL microtube, spin down cells @ 13,000 rpm for 2 min, freeze at -20°C).
+9. Incubate squid for 3 hr, then transfer squid into 100 mL FSIO.
+10. Transfer squid into 50 mL FSIO and place back in a 12hr light/dark cycle.
+
+09/22/2020
+
+Transfer squid to fresh water
+Prepare tubes for 48 hr squid harvest.
+Count inoculum plates.
+Harvest bacteria from plates by adding 1 mL 70% IO, scraping them with a sterile cell scraper, combining bacteria from duplicate plates into a single 1.7 mL microtube, then spinning down bacteria at 13,000 rpm for 2 min. Freeze cells @ -20°C. [Choose the appropriate plate to harvest depending on which dilution has a reasonable number of colonies]
+
+09/23/2020
+
+- Harvest 48 hr post-infection squid samples, measure luminescence, and freeze @ -80°C. Squid in boxes #22 and #23 in rack #25 of chest -80°C.
