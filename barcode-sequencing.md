@@ -16,4 +16,6 @@ This protocol describes how to perform Barcode Sequencing (BarSeq) experiments t
 6. Transfer 1.2 mL of the multiplexed population into a red-cap cryovial with 600 µl 50% glycerol (16.7% glycerol final).
 7. Mix well by fully inverting vial 20 times, then freeze @ -80°C.
 
-### Day 1 or 2
+###### Continue protocol on same or next day (if continuing on the same day, allow mixed population to incubate @ -80°C for ≥ 30 min)
+
+## II.A - Squid colonization
