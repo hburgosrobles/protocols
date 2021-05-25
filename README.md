@@ -2,6 +2,9 @@
 
 [![DOI](https://zenodo.org/badge/53515435.svg)](https://zenodo.org/badge/latestdoi/53515435)
 
+### Safety Plan
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) [Lab safety plan, Updated 2020-06-05](safety-covid-19.md)
+
 ### Molecular Biology
 - [Gene Deletion in *V. fischeri*](gene-deletion.md)
 - [Gibson Assembly](gibson-assembly.md)
@@ -36,6 +39,8 @@
 - [Colonization](squid-colonization.md)
 - [Colonization for aggregates](squid-colonization-aggregates.md)
 - [Colonization for INSeq](squid-colonization-inseq.md)
+- [Competition assay](squid-competitions.md)
+- [Fixation and staining](squid-fix-stain.md)
 
 ### Computational
 - [Git and GitHub](git-github.md)
