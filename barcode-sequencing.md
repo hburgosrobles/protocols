@@ -68,19 +68,19 @@ Perform *in vitro* competitive growth experiment by growing mixed population in 
 5. Harvest 1 mL of Input Library as described in steps 6.4 - 6.7 below.
 6. Perform *in vitro* competition as follows:
 
-  a) Dilute 16.6 µl of input library into 3 mL of LBS (1:181 dilution) in triplicate.
+    a) Dilute 16.6 µl of input library into 3 mL of LBS (1:181 dilution) in triplicate.
 
-  b) Incubate @ 25°C with aeration until OD<sub>600</sub> reaches initial input library OD.
+    b) Incubate @ 25°C with aeration until OD<sub>600</sub> reaches initial input library OD.
 
-  c) Dilute again as in step 1 and grow as in step 2 - after two 1:181 dilutions and growing back to the initial OD the bacteria will have duplicated 15 times (15 generations).
+    c) Dilute again as in step 1 and grow as in step 2 - after two 1:181 dilutions and growing back to the initial OD the bacteria will have duplicated 15 times (15 generations).
 
-  d) Harvest 1 mL of cultures into 1.7 mL microtubes.
+    d) Harvest 1 mL of cultures into 1.7 mL microtubes.
 
-  e) Spin down cells @ 14,000 rpm for 1 - 2 min.
+    e) Spin down cells @ 14,000 rpm for 1 - 2 min.
 
-  f) Carefully aspirate and discard supernatant - leave behind a cell pellet smaller than ~30 µl.
+    f) Carefully aspirate and discard supernatant - leave behind a cell pellet smaller than ~30 µl.
 
-  g) Freeze cell pellet @ -20°C.
+    g) Freeze cell pellet @ -20°C.
 
 
 ## III - Processing squid samples
