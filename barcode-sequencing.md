@@ -11,10 +11,15 @@ This protocol describes how to perform Barcode Sequencing (BarSeq) experiments t
 ###### Next day
 
 2. Mix 2 mL of each stationary phase culture in a 50 mL conical tube on ice.
+
 3. Vortex well, place back on ice.
+
 4. Spin down cells in swinging bucket rotor @ 4,700 rpm for 15 min and 4°C, then quickly but gently discard supernatant.
+
 5. Resuspend cells in 1/10 the original volume of LBS (e.g., for 20 strains: original volume = 2 mL * 20 strains = 40 mL. 1/10 = 4 mL LBS).
+
 6. Transfer 1.2 mL of the multiplexed population into a red-cap cryovial with 600 µl 50% glycerol (16.7% glycerol final).
+
 7. Mix well by fully inverting vial 20 times, then freeze @ -80°C.
 
 ###### Continue protocol on same or next day (if continuing on the same day, allow mixed population to incubate @ -80°C for ≥ 30 min)
@@ -24,10 +29,15 @@ This protocol describes how to perform Barcode Sequencing (BarSeq) experiments t
 Perform squid colonization following [Mandel lab protocol](squid-colonization.md) with some modifications as described below. Even though this protocol does not require using blue-white screening (β-gal assay), it is still a competitive assay as the various strains within the multiplexed population will compete against each other for the squid niche during infection.
 
 1. Thaw ≥ 30 µl of multiplexed population on ice - harvest bacterial glob using a sterile stick and transfer into a 1.7 mL microtube.
+
 2. Dilute 30 µl into 2.970 mL LBS (1:100 dilution).
+
 3. Incubate @ 25°C for 1-2 hr. Record growth time: Growth time = __________
+
 4. Set up FSIO and squid.
+
 5. Set up inoculum plates.
+
 6. Measure OD<sub>600</sub> of input library and calculate inoculum volume for a 3-5 x 10<sup>3</sup> CFU/mL target inoculum.
 
 	Input Library OD<sub>600</sub> = __________            
@@ -35,23 +45,33 @@ Perform squid colonization following [Mandel lab protocol](squid-colonization.md
   Inoculum volume (1.25/OD) = __________
 
 7. Inoculate squid with the appropriate inoculum volume of input library.
+
 8. Plate 50 µl of water from squid-treatment bowls in duplicate for inoculum counts.
+
 9. Harvest sample from Input Library - transfer 1 mL of Input library into a 1.7 mL microtube, spin down cells @ 13,000 rpm for 2 min, aspirate and discard supernatant, and freeze at -20°C.
+
 9. Incubate squid for 3 hr, then transfer squid into 100 mL FSIO.
+
 10. Transfer squid into 50 mL FSIO and place back in a 12hr light/dark cycle.
 
 ###### Next day
 
 11. Transfer squid into ~50 mL FSIO.
+
 12. Prepare tubes for 48 hr squid harvest.
+
 13. Count inoculum plates and record CFUs and dilution factor.
+
 14. Harvest bacteria from inoculum plates as follows: add 1 mL 70% IO to plate, scrape colonies with a sterile cell scraper, pipette bacteria into a 1.7 mL microtube (combine samples from duplicate inoculum plates), then spin down bacteria at 13,000 rpm for 2 min and freeze cell pellet @ -20°C.
+
 **Important:** When removing supernatant, also remove and discard excess cell volume by aspirating with pipette until a cell pellet of an approximate volume of 20-30 µl remains in sample. This is to prevent issues during gDNA extraction with the DNeasy 96-well kit (Qiagen) caused by excessively large cell pellets.
 
 ###### Next day
 
 15. Harvest 48 hr post-infection squid samples by transferring squid into individual 1.7 mL microtubes with 700 µl of FSIO.
+
 16. Measure luminescence using the luminometer and record RLUs (relative luminescence units).
+
 17. Freeze squid @ -80°C.
 
 ## II.B - *In vitro* competition
@@ -59,13 +79,17 @@ Perform squid colonization following [Mandel lab protocol](squid-colonization.md
 Perform *in vitro* competitive growth experiment by growing mixed population in media over 15 generations as described in [Brooks et al. (2014)](https://paperpile.com/shared/jciqot). This step can be skipped if the behavior of the barcoded strains present in the mixed population during competitive growth is already known. Otherwise, it is important to make sure that any observed colonization defects in the squid are not due to an overall growth defect.
 
 1. Thaw ≥ 30 µl of multiplexed population on ice - harvest bacterial glob using a sterile stick and transfer into a 1.7 mL microtube.
+
 2. Dilute 30 µl into 2.970 mL LBS (1:100 dilution).
+
 3. Incubate @ 25°C for 45 min - 1 hr. Record growth time: Growth time = __________
+
 4. Measure OD<sub>600</sub>. Want an OD of ~0.5.
 
 	Initial Input Library OD<sub>600</sub> = __________
 
 5. Harvest 1 mL of Input Library as described in steps 6.4 - 6.7 below.
+
 6. Perform *in vitro* competition as follows:
 
     a) Dilute 16.6 µl of input library into 3 mL of LBS (1:181 dilution) in triplicate.
@@ -85,4 +109,62 @@ Perform *in vitro* competitive growth experiment by growing mixed population in 
 
 ## III - Processing squid samples
 
-### A - Squid ho
+### A - Squid homogenization and plating
+
+Homogenize squid in batches of 30 - 40 as detailed in the [Mandel Lab Squid Colonization protocol](squid-colonization.md) and summarized below.
+
+1. After squid thaw, homogenize squid in the 1.7 mL microtube using a sterile pestle.
+
+2. Let tissue settle for 10 min @ room temperature.
+
+3. Dilute the homogenates 1:20 twice (25 µl squid homogenate into 475 µl FSIO or 70% IO) and plate dilutions 'B' and 'C' onto LBS plates (check RLU levels to make sure squid are colonized. If RLUs are low then plat dilutions 'A' and 'B') - plate only dilution 'A' for the Apo group.
+
+4. Grow plates @ 25°C overnight for ~18 hr (don't let colonies overgrow).
+
+###### Next day
+
+### B - Count Colony Forming Units (CFUs)
+
+1. Count CFUs on plates to obtain strain counts together with BarSeq data.
+
+2. Immediately continue with next step harvesting bacteria or seal plates (either with parafilm or in a bag) and store at 4°C for up to 3 months.
+
+### C - Harvest plated bacteria
+
+1. To each plate, add 1 mL LBS and scrape cells with a sterile cell scraper.
+
+2. Pipette cell slurry into a 1.7 mL microtube - combine cells from duplicate plates into a single DNA BarSeq sample.
+
+3. Vortex to mix well.
+
+4. Spin down cells @ 13,000 rpm for 2 min, quickly remove and discard supernatant - as supernatant is being aspirated, use pipette tip to break up pellet and aspirate cells until ~20 - 30 µl of bacteria is left in tube (too many cells messes up gDNA extraction).
+
+5. Freeze cell pellets @ -20°C.
+
+## IV - Genomic DNA (gDNA) extraction
+
+**Important:** The plates in the DNeasy 96 gDNA extraction kit require a 96-well plate centrifuge capable of reaching > 5,500 x *g* (~6,000 rpm) to properly pass the liquid through the spin columns (longer spin times at a slower speed will not work; I already tried...). I have been allowed use of the plate centrifuge in the Hryckowian lab that can reach the necessary speeds.
+
+**Hint:** Where possible, use the M4 repeater pipette to simplify adding fixed volumes to the wells of the 96-well plates.
+
+1. Extract gDNA from samples in sets of 96 using the QIAgen DNeasy Blood and Tissue kit for 96 samples following manufacturer’s protocol ([Purification of Total DNA from Animal Blood or Cells (DNeasy 96 protocol)](images/barcode-sequencing/QIAgen-Blood-and-Tissue-gDNA-extraction-Kit_protocol.pdf)) with certain modifications as described below:
+
+  a) Resuspend pellets in 180 µl of Buffer ATL and transfer into the provided collection microtubes.
+
+  b) Add 20 µl of Proteinase K to each well.
+
+  c) Incubate plate @ 56°C for 10 min as described in step 4 of the protocol.
+
+  d) Spin down plate as described in step 3 of the protocol to collect liquid at the bottom of the tube.
+
+  e) Continue protocol from step 2 but skip step 4 since the incubation @ 56°C has already been done.
+
+  (Final step) Elution, step 15: elute in 100 µl EB for a higher concentration of DNA (200 µl EB will also work fine if desired).
+
+2. Quantify DNA with Quant-iT 96-well kit following the [manufacturer's protocol](images/barcode-sequencing/User-Guide_Quant-iT-dsDNA-High-Sensitivity-Assay-Kit.pdf):
+
+  a) tentaculo
+
+3. Store DNA @ -20°C.
+
+## V - Index PCR
