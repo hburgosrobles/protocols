@@ -1,6 +1,8 @@
 # Sequence Tagged Gene Deletion
 by Hector Burgos
 
+**2021-05-27 Important:** I need to update this protocol. I wrote it when I had not done this procedure many times and there are some things I do differently now. One of these is the oligos that I use to screen the different mutants. For the gene::erm-bar constructs, the sequencing should be done with oligos FO, RO, erm-left-out (HB8), and erm-right-out (HB9). For the gene::bar constructs, the sequencing should be done with oligos FO, RO, LL (HB42), and RL (HB146).
+
 This protocol details how to generate a clean deletion of target genes in *Vibrio fischeri* where each deletion strain is tagged with a unique sequence or "barcode".
 SOE-PCR is used to generate the Mutagenic DNA (linear dsDNA carrying Erm<sup>R</sup> and the barcode, flanked by FRT sites and upstream and downstream homology to target gene; arranged as follows: US homology-FRT-Erm<sup>R</sup>-FRT-barcode-DS homology) and *tfoX* transformation is used to insert it into *V. fischeri* where it recombines into the chromosome based on sequence homology.
 The deletion at this stage is named *gene::erm-bar* (bar = barcode).
