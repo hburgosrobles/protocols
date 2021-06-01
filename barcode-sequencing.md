@@ -182,3 +182,5 @@ Homogenize squid in batches of 30 - 40 as detailed in the [Mandel Lab Squid Colo
 3. Store gDNA @ -20°C.
 
 ## V - Index PCR
+
+In this step the barcoded scars present in the individual samples will be amplified and tagged with Unique Dual Indices and Illumina sequencing adapters via a OneStep PCR with oligos specifically designed for this purpose. The custom-made oligos are designed based on the 
